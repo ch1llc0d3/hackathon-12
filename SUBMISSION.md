@@ -32,4 +32,4 @@ Sole builder — designed and implemented the whole project. Built the DOM harve
 
 ## Project Video (optional)
 
-2 min: install page → bookmarklet on the Modelo 037 demo → panel explains NIF and Epígrafe IAE in español → click a card, watch the field highlight → press a draft button.
+2 min: install page → bookmarklet on the RUC registration demo → panel explains Dígito Verificador and Naturaleza jurídica in español, then again in guaraní → click a card, watch the field highlight → press a draft button → point out that the Clave de acceso field never appears in the panel at all.

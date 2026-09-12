@@ -15,7 +15,14 @@
  .row{display:flex;gap:12px}.row>.f{flex:1}
  .sub{background:#0a3d2e;color:#fff;border:0;padding:10px 26px;font-size:15px;cursor:pointer}
  small{color:#555}
+ .practica{background:#fff3cd;border-bottom:2px solid #e0c97a;color:#6b5518;
+   padding:10px 16px;font-size:13px;margin:0 -22px;line-height:1.5}
+ .practica b{color:#8a6a10}
 </style>
+<div class="practica"><b>FORMULARIO DE PRÁCTICA — NO ES UNA PÁGINA OFICIAL.</b>
+ Esta página no pertenece al DNIT ni a la SET y no está conectada a ningún sistema
+ del Estado. Es una réplica creada para probar Ventanilla. <b>No ingreses datos
+ reales ni tu clave de acceso.</b></div>
 <div class="gov"><b>DNIT</b> · DIRECCIÓN NACIONAL DE INGRESOS TRIBUTARIOS · REPÚBLICA DEL PARAGUAY</div>
 <div class="sis">Sistema Marangatú &nbsp;›&nbsp; Solicitudes &nbsp;›&nbsp; Inscripción de Contribuyente</div>
 
@@ -87,7 +94,10 @@ Tributario Nacional. Los campos señalados con (*) son de carácter obligatorio.
 
 <input type="hidden" name="csrf_token" value="should-never-be-harvested">
 <div class="f"><label for="clave">Clave de acceso al Sistema Marangatú</label>
-  <input type="password" id="clave" name="clave"></div>
+  <input type="password" id="clave" name="clave" autocomplete="off" value="no-escribas-nada-aqui">
+  <small>Campo de prueba. Ventanilla se niega a leerlo: <code>type="password"</code> está en
+  <code>FORBIDDEN_TYPES</code>, igual que el <code>type="hidden"</code> de arriba. Ninguno de
+  los dos aparece en el panel.</small></div>
 
 <button type="button" class="sub"
   onclick="alert('Formulario de práctica — no se envía nada.')">Enviar Solicitud</button>
