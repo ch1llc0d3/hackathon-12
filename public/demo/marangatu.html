@@ -1,0 +1,94 @@
+<meta charset="utf-8"><title>Marangatú — Solicitud de Inscripción en el RUC</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+ body{font:15px/1.6 Arial,Helvetica,sans-serif;max-width:720px;margin:0 auto;
+      padding:0 22px 90px;color:#1a1a1a;background:#fff}
+ .gov{background:#c8102e;color:#fff;padding:10px 16px;font-size:13px;margin:0 -22px}
+ .gov b{letter-spacing:.04em}
+ .sis{background:#0a3d2e;color:#fff;padding:7px 16px;font-size:12px;margin:0 -22px 20px}
+ h1{font-size:19px;border-bottom:3px solid #c8102e;padding-bottom:7px;margin-top:20px}
+ fieldset{border:1px solid #b3b3b3;margin:0 0 18px;padding:13px 16px}
+ legend{font-weight:bold;font-size:13px;padding:0 6px;color:#0a3d2e}
+ .f{margin-bottom:12px}
+ label{display:block;font-size:12.5px;margin-bottom:3px}
+ input,select{width:100%;padding:6px;border:1px solid #8a8a8a;font:inherit;font-size:14px;background:#fff}
+ .row{display:flex;gap:12px}.row>.f{flex:1}
+ .sub{background:#0a3d2e;color:#fff;border:0;padding:10px 26px;font-size:15px;cursor:pointer}
+ small{color:#555}
+</style>
+<div class="gov"><b>DNIT</b> · DIRECCIÓN NACIONAL DE INGRESOS TRIBUTARIOS · REPÚBLICA DEL PARAGUAY</div>
+<div class="sis">Sistema Marangatú &nbsp;›&nbsp; Solicitudes &nbsp;›&nbsp; Inscripción de Contribuyente</div>
+
+<h1>Formulario 605 — Solicitud de Inscripción en el Registro Único del Contribuyente</h1>
+<p><small>Conforme a la Ley Nº 6.380/2019 de Modernización y Simplificación del Sistema
+Tributario Nacional. Los campos señalados con (*) son de carácter obligatorio.</small></p>
+
+<form>
+<fieldset><legend>Sección A — Identificación del solicitante</legend>
+  <div class="row">
+    <div class="f"><label for="ci">Nº de Cédula de Identidad Civil *</label>
+      <input id="ci" name="ci" required maxlength="8" pattern="[0-9]{6,8}"></div>
+    <div class="f"><label for="dv">Dígito Verificador (DV) *</label>
+      <input id="dv" name="dv" required maxlength="1" pattern="[0-9]"></div>
+  </div>
+  <div class="f"><label for="nombre">Nombres y Apellidos o Razón Social *</label>
+    <input id="nombre" name="nombre" required></div>
+  <div class="f"><label for="natjur">Naturaleza jurídica *</label>
+    <select id="natjur" name="natjur" required>
+      <option>Seleccione</option>
+      <option>Persona Física</option>
+      <option>Empresa Unipersonal</option>
+      <option>Sociedad Anónima</option>
+      <option>Sociedad de Responsabilidad Limitada</option>
+      <option>Entidad sin fines de lucro</option>
+    </select></div>
+</fieldset>
+
+<fieldset><legend>Sección B — Domicilio fiscal</legend>
+  <div class="row">
+    <div class="f"><label for="depto">Departamento *</label>
+      <select id="depto" name="depto" required>
+        <option>Seleccione</option><option>Capital (Asunción)</option><option>Central</option>
+        <option>Alto Paraná</option><option>Itapúa</option><option>Caaguazú</option>
+        <option>San Pedro</option><option>Cordillera</option><option>Guairá</option>
+        <option>Paraguarí</option><option>Ñeembucú</option><option>Amambay</option>
+        <option>Canindeyú</option><option>Presidente Hayes</option><option>Boquerón</option>
+      </select></div>
+    <div class="f"><label for="distrito">Distrito / Ciudad *</label>
+      <input id="distrito" name="distrito" required></div>
+  </div>
+  <div class="f"><label for="barrio">Barrio o Compañía</label><input id="barrio" name="barrio"></div>
+  <div class="f"><label for="dir">Calle / Avenida y número de casa *</label>
+    <input id="dir" name="dir" required></div>
+</fieldset>
+
+<fieldset><legend>Sección C — Obligaciones tributarias a inscribir</legend>
+  <div class="f"><label for="ciiu">Código de actividad económica principal (CIIU) *</label>
+    <input id="ciiu" name="ciiu" required maxlength="6" placeholder="000000"></div>
+  <div class="f"><label for="oblig">Obligación a inscribir *</label>
+    <select id="oblig" name="oblig" required>
+      <option>Seleccione</option>
+      <option>211 — IVA General</option>
+      <option>111 — IRE General</option>
+      <option>112 — IRE SIMPLE</option>
+      <option>113 — RESIMPLE</option>
+      <option>715 — IRP Rentas y Ganancias del Capital</option>
+      <option>725 — IRP Servicios Personales</option>
+    </select></div>
+  <div class="row">
+    <div class="f"><label for="inicio">Fecha de inicio de actividades *</label>
+      <input id="inicio" name="inicio" required placeholder="DD/MM/AAAA" maxlength="10"></div>
+    <div class="f"><label for="timbrado">Nº de Timbrado (si ya posee)</label>
+      <input id="timbrado" name="timbrado" maxlength="8"></div>
+  </div>
+  <div class="f"><label for="email">Correo electrónico para notificaciones *</label>
+    <input type="email" id="email" name="email" required></div>
+</fieldset>
+
+<input type="hidden" name="csrf_token" value="should-never-be-harvested">
+<div class="f"><label for="clave">Clave de acceso al Sistema Marangatú</label>
+  <input type="password" id="clave" name="clave"></div>
+
+<button type="button" class="sub"
+  onclick="alert('Formulario de práctica — no se envía nada.')">Enviar Solicitud</button>
+</form>
