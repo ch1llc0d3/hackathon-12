@@ -1,0 +1,10 @@
+.git
+.claude
+.env
+node_modules
+npm-debug.log*
+Dockerfile*
+compose*.yaml
+README.md
+SUBMISSION.md
+test

@@ -1,0 +1,41 @@
+<meta charset="utf-8"><title>Ventanilla — install</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+ body{font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;max-width:640px;
+      margin:0 auto;padding:44px 22px;color:#1c1a17;background:#fbfaf8}
+ h1{font-size:27px;margin:0 0 6px} .sub{color:#6d6459;margin:0 0 30px}
+ .bm{display:inline-block;padding:11px 22px;background:#1f3a5f;color:#fff;
+     border-radius:8px;text-decoration:none;font-weight:650;cursor:grab}
+ ol{padding-left:20px} li{margin-bottom:9px}
+ .box{background:#fff;border:1px solid #e6e0d5;border-radius:9px;padding:18px 20px;margin:26px 0}
+ code{background:#f0ece3;padding:2px 5px;border-radius:4px;font-size:14px}
+ .status{font-size:14px;color:#6d6459;margin-top:26px}
+ a.demo{color:#1f3a5f}
+</style>
+<h1>Ventanilla</h1>
+<p class="sub">An agent that stands at the counter with you.</p>
+
+<div class="box">
+  <p style="margin-top:0"><strong>Drag this to your bookmarks bar:</strong></p>
+  <a class="bm" href="javascript:(function(){var s=document.createElement('script');s.src='http://localhost:8787/inject.js?'+Date.now();document.body.appendChild(s);})();">Ventanilla</a>
+  <p style="margin-bottom:0;font-size:14px;color:#6d6459">Then open any official form and click it.</p>
+</div>
+
+<ol>
+  <li>Keep the Docker-hosted Ventanilla agent running (<code>docker compose up -d</code>).</li>
+  <li>Go to the form you are stuck on.</li>
+  <li>Click the <strong>Ventanilla</strong> bookmark. A panel opens on the right.</li>
+  <li>Say which language you want, and press <em>Read this page</em>.</li>
+  <li>For a screen the form reader cannot see, opt in to screenshot sharing and press <em>Entender una captura</em>. Choose a tab or screen in the browser prompt.</li>
+</ol>
+<p><strong>Screenshot privacy:</strong> a shared image is sent to OpenRouter's vision model and may contain anything visible on the chosen screen. Close or cover private details first. Normal form reading sends only labels and structure.</p>
+
+<p>No form to hand? <a class="demo" href="/demo/marangatu.html">Probá el formulario de práctica →</a></p>
+<p class="status" id="status">Checking the server…</p>
+<script>
+fetch('/api/health').then(r=>r.json()).then(d=>{
+  document.getElementById('status').textContent = d.configured
+    ? 'Server running. Model: ' + d.model
+    : 'Server running, but no API key yet — copy .env.example to .env and add one.';
+}).catch(()=>{document.getElementById('status').textContent='Server not reachable.';});
+</script>
